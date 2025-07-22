@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import smsRoutes from "./routes/smsRoutes.js";
+import smsRoutes from "./routes/sms.routes.js";
 
 dotenv.config();
 
