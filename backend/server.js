@@ -1,17 +1,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import rateLimit from "express-rate-limit";
+import limiter from "./middleware/limiter.middleware.js";
 import smsRoutes from "./routes/sms.routes.js";
 
 dotenv.config();
-
-const limiter = rateLimit({
-  windowMs: 60 * 60 * 1000,
-  max: 5,
-  message: `Sorry, you've reached your max number to links you can share: ${max}, please sign up to get 20 link shares an hour`,
-  headers: true,
-});
 
 const app = express();
 app.use(cors());
