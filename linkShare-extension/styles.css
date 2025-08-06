@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    width: 18.75rem;
+    padding: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.625rem;
+    margin-top: 0.625rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#status {
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+}
