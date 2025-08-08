@@ -4,14 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Link Share</title>
-    <link resl="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <h3>Share Links Via SMS</h3>
-    <input id="phoneNumber" placeholder="Enter Number (+1234567890)" />
-    <input id="link" placeholder="Past Link" />
-    <button id="sendBtn">Send</button>
-    <div id="status"></div>
+    <div class="container">
+      <div class="input-group">
+        <span class="icon">📱</span>
+        <input id="phoneNumber" type="tel" placeholder=" " required />
+        <label for="phoneNumber">Phone Number</label>
+      </div>
+      <div class="input-group">
+        <span class="icon">🔗</span>
+        <input id="link" type="text" placeholder=" " required />
+        <label for="link">Paste Link</label>
+      </div>
+      <button id="sendBtn">Send</button>
+      <div id="status"></div>
+    </div>
+
+    <div>
+      <span
+        >Want to share more links? <button id="signup">Sign Up</button></span
+      >
+    </div>
 
     <script src="popup.js"></script>
   </body>
