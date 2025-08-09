@@ -2,10 +2,13 @@
   "manifest_version": 3,
   "name": "Link Share",
   "version": "1.0",
-  "description": "Share links via SMS from the browser",
+  "description": "Share links via SMS",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "./assets/lynkr-icon.png"
+    }
   },
-  "permissions": ["activeTab"],
+  "permissions": ["tabs"],
   "host_permissions": ["http://localhost:5000/"]
 }

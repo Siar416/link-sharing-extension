@@ -1,6 +1,14 @@
+document.addEventListener("DOMContentLoaded", () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (tabs[0] && tabs[0].url) {
+      document.getElementById("link").value = tabs[0].url;
+    }
+  });
+});
+
 document.getElementById("sendBtn").addEventListener("click", async () => {
   const phoneNumber = document.getElementById("phoneNumber").value;
-  const link = document.getElementById("link").value;
+  let link = document.getElementById("link").value;
   const status = document.getElementById("status");
   status.textContent = "";
 
@@ -18,10 +26,12 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
       body: JSON.stringify({ phoneNumber, link }),
     });
 
-    const result = response.json();
+    const result = await response.json();
 
     if (response.ok) {
       status.textContent = "✅ Link shared successfully!";
+      document.getElementById("phoneNumber").value = "";
+      document.getElementById("link").value = "";
     } else {
       status.textContent = `❌ ${result.error || "Failed to send link."}`;
     }
