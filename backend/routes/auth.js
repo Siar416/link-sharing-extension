@@ -17,12 +17,12 @@ router.post("/signup", async (req, res) => {
     password,
   });
 
-  if (error) return res.status(400).json({ error: error.message });
-  res.json({ user: data });
-});
+  if (error) {
+    console.error(`Supabase signup error: ${error}`);
+    return res.status(400).json({ error: error.message });
+  }
 
-// router.get("/signup", (req, res) => {
-//   res.json({ message: "here" });
-// });
+  res.json(data);
+});
 
 export default router;
