@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("signupForm");
   const statusDiv = document.getElementById("signupStatus");
+  const signupCard = document.querySelector(".signup-card");
+
+  console.log("here");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -32,10 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
         statusDiv.classList.add("success");
         form.reset();
 
-        // Optionally redirect to login page after 2 seconds
-        setTimeout(() => {
-          window.location.href = "./login.html";
-        }, 2000);
+        signupCard.innerHTML = `
+        <h2>Welcome to LynkShare!</h2>
+        <p class="subtitle">Hello <strong>${email}</strong>, your account has been created successfully.</p>
+        <p>You can now start using the extension to share links instantly to any phone.</p>
+      `;
       } else {
         statusDiv.textContent = `❌ ${result.error || "Signup failed"}`;
         statusDiv.classList.add("error");
